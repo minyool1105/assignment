@@ -71,3 +71,4 @@ while True:
         print("잘못된 입력입니다.")
     if choice == 0:
         break
+
