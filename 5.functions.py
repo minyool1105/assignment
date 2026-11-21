@@ -8,10 +8,10 @@ movies = [
 ]
 
 def retrieve_rating():
-
-    print("[평점 8.5 이상 영화]")
+    user_input = float(input("평점 몇 이상의 영화를 조회하시겠습니까?"))
+    print("[평점",user_input," 이상 영화]")
     for movie in movies:
-        if movie["rating"] >= 8.5:
+        if movie["rating"] > user_input:
             print("- ", movie["title"])
 
 def retrieve_total_movie_views():
@@ -31,7 +31,7 @@ def retrieve_max_view_movie():
     print("[최다 조회수의 영화]")
     print(max_title, ":", max_views)
 
-wh
+
 
 total_animation_views = 0
 for movie in movies:
@@ -56,7 +56,18 @@ while True:
     print("3. 최다 조회수 영화 조회")
     print("0. 종료하기")
     print("====================")
+
     choice = int(input("Enter your choice:"))
 
+    if choice == 0:
+        break
+    elif choice == 1:
+        retrieve_rating()
+    elif choice == 2:
+        retrieve_total_movie_views()
+    elif choice == 3:
+        retrieve_max_view_movie()
+    else:
+        print("잘못된 입력입니다.")
     if choice == 0:
         break
